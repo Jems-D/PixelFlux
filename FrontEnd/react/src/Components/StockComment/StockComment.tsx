@@ -44,7 +44,9 @@ const StockComment = ({ symbol }: Props) => {
 
   return (
     <div className="flex flex-col">
-      <StockCommentList comments={comments} />
+      <div className="mt-4">
+        <StockCommentList comments={comments} />
+      </div>
       <StockCommentForm symbol={symbol} handleCommentSubmit={handleComment} />
     </div>
   );
