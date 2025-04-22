@@ -6,6 +6,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 import Tiles from "../../Components/Tiles/Tiles";
 import Spinner from "../../Components/Spinner/Spinner";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormatting";
 type Props = {};
 
 const CompanyPage = (props: Props) => {
@@ -30,7 +31,10 @@ const CompanyPage = (props: Props) => {
             <Tiles title="Company Name" subTitle={companyData.companyName} />
             <Tiles title="Location" subTitle={companyData.address} />
             <Tiles title="CEO" subTitle={companyData.ceo} />
-            <Tiles title="Market Cap" subTitle={companyData.marketCap} />
+            <Tiles
+              title="Market Cap"
+              subTitle={formatLargeMonetaryNumber(companyData.marketCap)}
+            />
             <p className="bg-white shadow rounded text-meduim text-gray-900 mt-3 mx-4 px-4">
               {companyData.description}
             </p>

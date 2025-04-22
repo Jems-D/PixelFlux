@@ -9,6 +9,7 @@ import {
   formatLargeNonMonetaryNumber,
   formatRatio,
 } from "../../Helpers/NumberFormatting";
+import StockComment from "../StockComment/StockComment";
 
 interface Props {}
 
@@ -99,7 +100,10 @@ const CompanyProfile = (props: Props) => {
   return (
     <>
       {companyKeyMetrics ? (
-        <RatioList config={tableConfig} data={companyKeyMetrics} />
+        <>
+          <RatioList config={tableConfig} data={companyKeyMetrics} />
+          <StockComment symbol={ticker} />
+        </>
       ) : (
         <Spinner />
       )}
